@@ -1,0 +1,63 @@
+.body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: #fbfbfb;
+}
+div, p{
+    margin: 0;
+    padding: 0;
+}
+.wrapper{
+    width: 500px;
+    margin: 10px auto;
+    font-size: 14px;
+    background: #fff;
+    border: 1px solid #f1f1f1;
+    padding: 20px;
+}
+
+.comment-filed{
+    display: flex;
+    margin-bottom: 20px;
+}
+.comment-filed-name{
+    display: flex;
+    flex-basis: 100px;
+    font-size: 14px;
+}
+.comment-filed .comment-filed-input{
+    display: flex;
+    flex: 1;
+}
+.comment-filed-input input, .comment-filed-input textarea{
+    display: flex;
+    flex: 1;
+    outline: none;
+    border: 1px solid #f1f1f1;
+    padding: 5px;
+}
+.comment-filed textarea{
+    height: 100px;
+}
+.comment-filed-button{
+    display: flex;
+    justify-content: flex-end;
+}
+.comment-filed-button button{
+    width: 75px;
+    height: 25px;
+    outline: none;
+    color: #fff;
+    resize: none;
+    background: #0099ee;
+}
+
+.comment{
+    display: flex;
+    padding: 10px 0 30px 0;
+    border-bottom: 1px solid #f1f1f1;
+}
+.comment .commnet-user{
+    color: #0099ee;
+}
