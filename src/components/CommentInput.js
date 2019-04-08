@@ -4,29 +4,22 @@ import PropTypes from 'prop-types'
 
 class CommentInput extends Component {
     static propTypes = {
-        onSubmit: PropTypes.func
+        username: PropTypes.any,
+        onSubmit: PropTypes.func,
+        onUserNameInputBlur: PropTypes.func
     }
-    constructor() {
-        super();
+    static defaultProps = {
+        username: ''
+    }
+    constructor(props) {
+        super(props);
         this.state = {
-            username: '',
+            username: props.username,
             content: ''
         }
     }
-    componentWillMount() {
-        this._loadUsername()
-    }
     componentDidMount() {
         this.textarea.focus()
-    }
-    _loadUsername() {
-        const username = localStorage.getItem('username')
-        if (username) {
-            this.setState({username})
-        }
-    }
-    _saveUsername(username) {
-        localStorage.setItem('username', username)
     }
     handleUsernameChange(e) {
         this.setState({
@@ -48,9 +41,6 @@ class CommentInput extends Component {
         }
         this.setState({content: ''})
     }
-    handleUsernameBlur(event) {
-        this._saveUsername(event.target.value)
-    }
     render(){
         return (
             <div className='comment-input'>
@@ -60,7 +50,7 @@ class CommentInput extends Component {
                         <input 
                             value={this.state.username}
                             onChange={this.handleUsernameChange.bind(this)}
-                            onBlur={this.handleUsernameBlur.bind(this)}/>
+                            onBlur={this.handleUsernameChange.bind(this)}/>
                     </div>
                 </div>
 
